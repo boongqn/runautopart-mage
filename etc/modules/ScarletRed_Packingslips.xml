@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <modules>
+        <ScarletRed_Packingslips>
+            <active>true</active>
+            <codePool>community</codePool>
+        </ScarletRed_Packingslips>
+    </modules>
+</config>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Activo
+ *
+ * @category    
+ * @package     Activo_Adwordsconversion
+ * @copyright   Copyright (c) 2012 Activo Extensions. (http://extensions.activo.com)
+ * @license     Commercial
+ */
+-->
+<config>
+    <modules>
+        <Activo_Adwordsconversion>
+            <version>1.1.0</version>
+        </Activo_Adwordsconversion>
+    </modules>
+
+    <frontend>
+        <layout>
+            <updates>
+                <adwordsconversion>
+                    <file>adwordsconversion.xml</file>
+                </adwordsconversion>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <blocks>
+            <adwordsconversion>
+                <class>Activo_Adwordsconversion_Block</class>
+            </adwordsconversion>
+        </blocks>
+        <helpers>
+            <adwordsconversion>
+                <class>Activo_Adwordsconversion_Helper</class>
+            </adwordsconversion>
+        </helpers>
+        <models>
+            <adwordsconversion>
+                <class>Activo_Adwordsconversion_Model</class>
+            </adwordsconversion>
+        </models>
+    </global>
+    <adminhtml>
+         <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <activo_adwordsconversion>
+                                            <title>AdWords Conversion Tracking</title>
+                                        </activo_adwordsconversion>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                   </children>
+               </admin>
+           </resources>
+        </acl>
+    </adminhtml>
+    <default>
+        <activo_adwordsconversion>
+            <global>
+                <enabled>1</enabled>
+                <id></id>
+                <label>Purchase</label>
+                <language>en</language>
+                <bgcolor>ffffff</bgcolor>
+                <totalfield>0</totalfield>
+                <isdebug>0</isdebug>
+            </global>
+        </activo_adwordsconversion>
+    </default>
+</config>

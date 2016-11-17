@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   BL
+ * @package    BL_FileAttributes
+ * @copyright  Copyright (c) 2011 Benoît Leulliette <benoit.leulliette@gmail.com>
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+   <sections>
+        <fileattributes translate="label" module="fileattributes">
+            <label>File Attributes</label>
+            <tab>general</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>8000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <configuration translate="label">
+                    <label>Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <attributes_configurations translate="label comment">
+                            <label>Attributes Configurations</label>
+                            <frontend_model>fileattributes/system_config_form_field_attributes_configuration</frontend_model>
+                            <backend_model>fileattributes/system_config_backend_serialized_attributes_configuration</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[<span style="text-decoration:underline;">Columns descriptions :</span><br /><strong>- Display Configuration On Fields:</strong> if set to <em>Yes</em>, configuration restrictions will be displayed on each file attribute field<br /><strong>- File Save Moment:</strong> when the file will be uploaded during entity save (the choices correspond to the _beforeSave() and _afterSave() models methods)<br /><strong>- Exceptions Handling Mode:</strong> by which way will be handled exceptions that may be thrown during file upload<br /><strong>- Allowed File Extensions:</strong> only files with those extensions will be allowed to be uploaded. This value accept various separators for listed extensions<br /><strong>- Forbidden File Extensions:</strong> all files with those extensions won't be allowed to be uploaded. This value is only used if <em>Allowed File Extensions</em> is left empty, and behaves the same way<br /><strong>- File Max Size:</strong> uploaded files will not be able to have a size bigger than one defined in this value. Please note that if server's max upload size if smaller than this value, it will be used instead<br /><strong>- Allowed MIME Types:</strong> only files with those MIME types will be allowed to uploaded. For each MIME type, indicate first its code, then its label as it will be seen by user, and separate all values with a comma<br /><strong>- Forbidden MIME Types:</strong> all files with those MIME types won't be allowed to be uploaded. This value is only used if <em>Allowed Mime Types</em> is left empty, and behaves the same way<br /><strong>- Image Only:</strong> if set to <em>Yes</em>, only images files will be allowed to be uploaded (work with MIME types validation)<br /><br /><em>Concerning the 4 following values, defining a dimension for at least one of them implies that only images files will be allowed to be uploaded</em><br /><br /><strong>- Image Min Width:</strong> only images with a width equal or greater than this value will be allowed to be uploaded<br /><strong>- Image Max Width:</strong> only images with a width equal or lesser than this value will be allowed to be uploaded<br /><strong>- Image Min Height:</strong> only images with a height equal or greater than this value will be allowed to be uploaded<br /><strong>- Image Max Height:</strong> only images with a height equal or lesser than this value will be allowed to be uploaded<br /><br /><span style="text-decoration:underline;">Note on MIME types detection :</span><br />MIME types detection is used for <em>Allowed MIME types</em>, <em>Forbidden MIME types</em> and <em>Image Only</em> values, but requires the availability of either the <em>fileinfo</em> PHP extension or the <em>mime_content_type</em> PHP function]]></comment>
+                        </attributes_configurations>
+                        <file_save_moment translate="label comment">
+                            <label>Default File Save Moment</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>fileattributes/system_config_source_file_save_moment</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Will be used if an attribute has no configuration set]]></comment>
+                        </file_save_moment>
+                        <exceptions_handling_mode translate="label comment">
+                            <label>Default Exceptions Handling Mode</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>fileattributes/system_config_source_exceptions_handling_mode</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Will be used if an attribute has no configuration set]]></comment>
+                        </exceptions_handling_mode>
+                        <!--
+                        // See BL_FileAttributes_Model_Attribute_Backend_File on line 132
+                        <allow_mime_header_check translate="label comment">
+                            <label>Allow HTTP header check for MIME types validation</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Depending on your server configuration, this may be needed to validate files MIME types (also used for "Image Only" value), but keep in mind that MIME type given by HTTP header is not secure and can easily be changed]]></comment>
+                        </allow_mime_header_check>
+                        -->
+                    </fields>
+                </configuration>
+            </groups>
+        </fileattributes>
+    </sections>
+</config>

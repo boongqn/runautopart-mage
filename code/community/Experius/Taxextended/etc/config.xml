@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+      <modules>
+        <Experius_Taxextended>
+          <version>0.1.0</version>
+        </Experius_Taxextended>
+      </modules>
+	  
+   <global>
+
+   
+   
+      <helpers>
+       <taxextended>
+           <class>Experius_Taxextended_Helper</class>
+       </taxextended>
+      </helpers>   
+      
+		<models>
+		<taxextended>
+           <class>Experius_Taxextended_Model</class>
+       	</taxextended>
+		
+		</models>
+	  
+   </global> 
+   
+
+</config> 

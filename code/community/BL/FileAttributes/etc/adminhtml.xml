@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   BL
+ * @package    BL_FileAttributes
+ * @copyright  Copyright (c) 2011 Benoît Leulliette <benoit.leulliette@gmail.com>
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <events>
+        <adminhtml_product_attribute_types>
+            <observers>
+                <fileattributes>
+                    <type>model</type>
+                    <class>fileattributes/observer</class>
+                    <method>addFileAttributeType</method>
+                </fileattributes>
+            </observers>
+        </adminhtml_product_attribute_types>
+    </events>
+    <layout>
+        <updates>
+            <fileattributes>
+                <file>bl/fileattributes.xml</file>
+            </fileattributes>
+        </updates>
+    </layout>
+    <translate>
+        <modules>
+            <fileattributes>
+                <files>
+                    <default>BL_FileAttributes.csv</default>
+                </files>
+            </fileattributes>
+        </modules>
+    </translate>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <fileattributes>
+                                <title>File Attributes</title>
+                                <sort_order>20</sort_order>
+                                <children>
+                                    <obsolete_files translate="title" module="fileattributes">
+                                        <title>Manage Obsolete Files</title>
+                                        <sort_order>10</sort_order>
+                                    </obsolete_files>
+                                    <setup translate="title" module="fileattributes">
+                                        <title>Setup</title>
+                                        <sort_order>20</sort_order>
+                                    </setup>
+                                </children>
+                            </fileattributes>
+                            <config>
+                                <children>
+                                    <fileattributes translate="title" module="fileattributes">
+                                        <title>File Attributes Configuration</title>
+                                    </fileattributes>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <system>
+            <children>
+                <fileattributes translate="title" module="fileattributes">
+                    <title>File Attributes</title>
+                    <sort_order>20</sort_order>
+                    <children>
+                        <obsolete_files translate="title" module="fileattributes">
+                            <title>Manage Obsolete Files</title>
+                            <sort_order>10</sort_order>
+                            <action>fileattributes/adminhtml_obsolete_file/index</action>
+                        </obsolete_files>
+                        <setup translate="title" module="fileattributes">
+                            <title>Setup</title>
+                            <sort_order>20</sort_order>
+                            <action>adminhtml/system_config/edit/section/fileattributes/</action>
+                        </setup>
+                    </children>
+                </fileattributes>
+            </children>
+        </system>
+    </menu>
+</config>

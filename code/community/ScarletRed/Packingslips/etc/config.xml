@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <modules>
+    <ScarletRed_Packingslips>
+      <version>1.0.1</version>
+    </ScarletRed_Packingslips>
+  </modules>
+  <global>
+    <models>
+      <scarletred_packingslips>
+        <class>ScarletRed_Packingslips_Model</class>
+      </scarletred_packingslips>
+    </models>
+    <helpers>
+      <scarletred_packingslips>
+        <class>ScarletRed_Packingslips_Helper</class>
+      </scarletred_packingslips>
+    </helpers>
+    <blocks>
+      <scarletred_packingslips>
+        <class>ScarletRed_Packingslips_Block</class>
+      </scarletred_packingslips>
+    </blocks>
+  </global>
+  <frontend></frontend>
+  <adminhtml>
+    <events>
+      <adminhtml_block_html_before>
+        <observers>
+          <scarletred_packingslips>
+            <class>scarletred_packingslips/adminhtml_block_widget_observer</class>
+            <method>addMassAction</method>
+          </scarletred_packingslips>
+        </observers>
+      </adminhtml_block_html_before>
+    </events>
+  </adminhtml>
+  <admin>
+    <routers>
+      <adminhtml>
+        <use>admin</use>
+        <args>
+          <modules>
+            <ScarletRed_Packingslips before="Mage_Adminhtml">ScarletRed_Packingslips_Adminhtml</ScarletRed_Packingslips>
+          </modules>
+        </args>
+      </adminhtml>
+    </routers>
+  </admin>
+</config>

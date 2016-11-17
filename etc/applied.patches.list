@@ -1,0 +1,11 @@
+2015-04-28 07:56:00 UTC | SUPEE-1533 | EE_1.11 | v1 | _ | n/a | SUPEE-1533_EE_1.11_v1.patch
+patching file app/code/core/Mage/Adminhtml/Block/Dashboard/Graph.php
+patching file app/code/core/Mage/Adminhtml/controllers/DashboardController.php
+
+
+2015-04-28 07:56:06 UTC | SUPEE-5346 | EE_1.11.1.0 | v1 | 08e4b6cd424a9603d24d16cf8b57e11301fa8528 | Thu Feb 5 20:06:56 2015 +0200 | v1.11.1.0..HEAD
+patching file app/code/core/Mage/Admin/Model/Observer.php
+patching file app/code/core/Mage/Core/Controller/Request/Http.php
+patching file lib/Varien/Db/Adapter/Pdo/Mysql.php
+
+

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+<modules>
+   <Experius_Taxextended>
+      <active>true</active>
+      <codePool>community</codePool>
+      <version>0.1.0</version>
+   </Experius_Taxextended>
+</modules>
+</config>
